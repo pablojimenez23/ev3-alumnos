@@ -1,0 +1,14 @@
+# Dependabot: revisa a diario las dependencias de Python y propone actualizaciones.
+# Todas van agrupadas en un solo PR para que Flask y Werkzeug se actualicen juntos.
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+    groups:
+      dependencias-python:
+        patterns: ["*"]
+    commit-message:
+      prefix: "DEPS"
